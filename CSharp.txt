@@ -1,0 +1,98 @@
+
+
+1. Explain OOPS Concepts
+Encapsulation
+Definition: Encapsulation is the practice of bundling data (fields) and methods (functions) that operate on the data into a single unit, or class. It also involves restricting direct access to some of the object's components, which is a way of preventing unintended interference and misuse.
+Purpose: Protects the internal state of an object and ensures control over how data is accessed or modified.
+Implementation:
+Use access modifiers such as private, public, protected, etc.
+Data can be accessed or modified through public properties or methods.
+public class Person
+{
+    private string name;  // Encapsulated field (private)
+    
+    public string Name   // Public property to access the name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+}
+
+
+
+Abstraction
+Definition: Abstraction means hiding the complex implementation details of a system and exposing only the essential features to the user.
+Purpose: To focus on what an object does, rather than how it does it, making the code more flexible and easy to manage.
+Implementation:
+Achieved using abstract classes or interfaces.
+Abstract classes and interfaces define methods that must be implemented by derived classes but do not provide the full implementation.
+  public abstract class Animal  // Abstract class
+{
+    public abstract void Speak();  // Abstract method
+}
+
+public class Dog : Animal
+{
+    public override void Speak()  // Providing the implementation
+    {
+        Console.WriteLine("Bark");
+    }
+}
+
+
+Inheritance
+Definition: Inheritance allows a class (called the child or derived class) to inherit properties and methods from another class (called the parent or base class).
+Purpose: It promotes code reusability and establishes a natural hierarchy between classes.
+public class Vehicle  // Base class
+{
+    public int Speed { get; set; }
+}
+
+public class Car : Vehicle  // Derived class inheriting Vehicle
+{
+    public string Model { get; set; }
+}
+
+
+Polymorphism
+Definition: Polymorphism means "many forms." It allows methods to do different things based on the object that is calling them, even if they share the same name.
+Purpose: Provides flexibility by allowing the same method to be used in different ways, depending on the context.
+Types:
+Compile-time polymorphism (Method Overloading): Methods with the same name but different signatures.
+Runtime polymorphism (Method Overriding): Derived classes provide a specific implementation of a method already defined in a base class.
+
+  overloading
+public class MathOperations
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public double Add(double a, double b)
+    {
+        return a + b;
+    }
+}
+
+
+
+ overriding
+public class Animal
+{
+    public virtual void Speak()
+    {
+        Console.WriteLine("Animal makes a sound");
+    }
+}
+
+public class Dog : Animal
+{
+    public override void Speak()  // Overriding the base class method
+    {
+        Console.WriteLine("Bark");
+    }
+}
+
+
+  
